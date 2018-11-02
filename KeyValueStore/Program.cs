@@ -8,14 +8,22 @@ namespace KeyValueStore
 {
     class Program
     {
-        static void Main(string[] args)
+        struct KeyValue
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            public int key;
+            public readonly object value;
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
+            public KeyValue(string key, object value)
+            {
+                this.key =  42 ;
+                this.value = 17;
+            }
+            public int this [int index]
+            {
+                get { return this.key; }
+                set { this.key = value; }
+                
+            }
         }
     }
 }
